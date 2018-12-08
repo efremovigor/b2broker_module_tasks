@@ -78,6 +78,8 @@
                         </li>
                     @endforeach
                 </ul>
+            @elseif
+                <p>Tasks not found</p>
             @endif
         </div>
         <div class="links">
