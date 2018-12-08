@@ -12,12 +12,12 @@ class Routes
     public static function getRoutes(){
         return [
             'get' => [
-                '/tasks/create' => '\Symfony\Component\HttpKernel\Log\Packet\Controller\SupportTaskController@getCreate',
-                '/tasks' => '\Symfony\Component\HttpKernel\Log\Packet\Controller\SupportTaskController@getTasks',
-                '/tasks/{id}' => '\Symfony\Component\HttpKernel\Log\Packet\Controller\SupportTaskController@getTask',
+                '/tasks/create' => '\Tasks\Controller\SupportTaskController@getCreate',
+                '/tasks' => '\Tasks\Controller\SupportTaskController@getTasks',
+                '/tasks/{id}' => '\Tasks\Controller\SupportTaskController@getTask',
             ],
             'post' => [
-                '/tasks' => '\Symfony\Component\HttpKernel\Log\Packet\Controller\SupportTaskController@postCreate',
+                '/tasks' => '\Tasks\Controller\SupportTaskController@postCreate',
             ]
         ];
     }
@@ -25,17 +25,17 @@ class Routes
     public static function getApiRoutes(){
         return [
             'get' => [
-                '/tasks' => '\Symfony\Component\HttpKernel\Log\Packet\Controller\Api\SupportTaskController@all',
-                '/tasks/{id}' => '\Symfony\Component\HttpKernel\Log\Packet\Controller\Api\SupportTaskController@read',
+                '/tasks' => '\Tasks\Controller\Api\SupportTaskController@all',
+                '/tasks/{id}' => '\Tasks\Controller\Api\SupportTaskController@read',
             ],
             'post' => [
-                '/tasks' => '\Symfony\Component\HttpKernel\Log\Packet\Controller\Api\SupportTaskController@create',
+                '/tasks' => '\Tasks\Controller\Api\SupportTaskController@create',
             ],
             'put' => [
-                '/tasks/{id}' => '\Symfony\Component\HttpKernel\Log\Packet\Controller\Api\SupportTaskController@update',
+                '/tasks/{id}' => '\Tasks\Controller\Api\SupportTaskController@update',
             ],
             'delete' => [
-                '/tasks/{id}' => '\Symfony\Component\HttpKernel\Log\Packet\Controller\Api\SupportTaskController@delete',
+                '/tasks/{id}' => '\Tasks\Controller\Api\SupportTaskController@delete',
             ]
         ];
     }
