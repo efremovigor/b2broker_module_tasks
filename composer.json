@@ -1,5 +1,5 @@
 {
-  "name": "bi.entities",
+  "name": "b2broker_module_tasks",
   "minimum-stability": "dev",
   "type": "library",
   "require": {
