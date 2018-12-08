@@ -1,0 +1,13 @@
+{
+  "name": "bi.entities",
+  "minimum-stability": "dev",
+  "type": "library",
+  "require": {
+    "php": ">=7.1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  }
+}
