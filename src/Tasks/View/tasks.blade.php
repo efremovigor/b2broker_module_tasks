@@ -78,7 +78,7 @@
                         </li>
                     @endforeach
                 </ul>
-            @elseif
+            @else
                 <p>Tasks not found</p>
             @endif
         </div>
