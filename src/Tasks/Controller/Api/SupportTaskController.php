@@ -10,7 +10,7 @@ namespace Tasks\Controller\Api;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Request;
-use Symfony\Component\HttpKernel\Log\Packet\Model\SupportTask;
+use Tasks\Model\SupportTask;
 
 
 class SupportTaskController

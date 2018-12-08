@@ -70,13 +70,15 @@
             B2Broker Support
         </div>
         <div class="tasks">
-            <ul>
-                @foreach ($tasks as $task)
-                    <li>
-                        <a href="{{ url('/tasks/'.$task->id) }}">{{$task->title}}</a>
-                    </li>
-                @endforeach
-            </ul>
+            @if (count($tasks) > 0)
+                <ul>
+                    @foreach ($tasks as $task)
+                        <li>
+                            <a href="{{ url('/tasks/'.$task->id) }}">{{$task->title}}</a>
+                        </li>
+                    @endforeach
+                </ul>
+            @endif
         </div>
         <div class="links">
             <a href="{{ url('/') }}">Main</a>
