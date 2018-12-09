@@ -61,7 +61,7 @@ class SupportTaskController extends Controller
             return $this->getFail(['error' => 'Not found'], $code = 404);
         }
         if ($task->delete(Request::post()) === true) {
-            return $this->getSuccess(null, 200);
+            return $this->getSuccess(null, 204);
         }
         return $this->getFail(['error' => 'Not found'], 400);
     }
