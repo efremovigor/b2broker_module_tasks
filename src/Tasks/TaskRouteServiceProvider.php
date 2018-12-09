@@ -4,7 +4,7 @@ namespace Tasks;
 
 use Illuminate\Support\Facades\Route;
 
-class TaskRouteServiceProvider extends Illuminate\Foundation\Support\Providers\RouteServiceProvider
+class TaskRouteServiceProvider extends \Illuminate\Foundation\Support\Providers\RouteServiceProvider
 {
 
     /**
