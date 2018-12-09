@@ -10,16 +10,17 @@ namespace Tasks\Controller\Api;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Request;
+use Tasks\Controller\Controller;
 use Tasks\Model\SupportTask;
 
 
-class SupportTaskController
+class SupportTaskController extends Controller
 {
     public function create(Request $request, SupportTask $task)
     {
         try {
             $task->newTask($request::post()['title'], $request::post()['body']);
-            $msg = $task->save() ? 'Task sended' : 'Unknow error';
+            $task->save();
         } catch (\Throwable $exception) {
             return $this->getFail(['error' => 'Bad request'], 400);
         }
@@ -41,7 +42,7 @@ class SupportTaskController
         return $this->getSuccess(compact('task'));
     }
 
-    public function update($id, SupportTask $task)
+    public function update($id)
     {
         $task = SupportTask::findActive($id);
         if ($task === null) {
@@ -53,7 +54,7 @@ class SupportTaskController
         return $this->getFail(['error' => 'Not found'], 400);
     }
 
-    public function delete($id, SupportTask $task)
+    public function delete($id)
     {
         $task = SupportTask::findActive($id);
         if ($task === null) {

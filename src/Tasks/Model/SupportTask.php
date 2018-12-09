@@ -11,6 +11,7 @@ class SupportTask extends Model
     private const TIME_ACTUAL_TASK = 1;
 
     public $timestamps = false;
+
     protected $fillable = ['title', 'body'];
 
     public const NAME = 'support_task';
@@ -27,6 +28,7 @@ class SupportTask extends Model
     /**
      * Активнве задачи для саппорта
      * @return mixed
+     * @throws \Exception
      */
     public static function getActive(): Collection
     {
@@ -36,6 +38,11 @@ class SupportTask extends Model
         ])->get();
     }
 
+    /**
+     * @param $id
+     * @return SupportTask|null
+     * @throws \Exception
+     */
     public static function findActive($id): ?SupportTask
     {
         return static::where([
@@ -58,12 +65,22 @@ class SupportTask extends Model
         $this->modified = $date;
     }
 
+    /**
+     * @param array $attributes
+     * @param array $options
+     * @return bool
+     */
     public function update(array $attributes = [], array $options = []): bool
     {
         $this->modified = date('Y-m-d H:i:s');
         return parent::update($attributes, $options);
     }
 
+    /**
+     * @param array $attributes
+     * @param array $options
+     * @return bool
+     */
     public function delete(array $attributes = [], array $options = []): bool
     {
         $this->modified = date('Y-m-d H:i:s');
@@ -73,6 +90,7 @@ class SupportTask extends Model
 
     /**
      * @return false|string
+     * @throws \Exception
      */
     private static function getActualTime(): string
     {

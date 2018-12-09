@@ -2,7 +2,6 @@
 
 namespace Tasks\Controller;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Request;
 use Tasks\Model\SupportTask;
 
@@ -11,6 +10,7 @@ class SupportTaskController extends Controller
 
     /**
      * @return \Illuminate\Contracts\View\View
+     * @throws \Exception
      */
     public function getTasks()
     {
@@ -21,6 +21,7 @@ class SupportTaskController extends Controller
     /**
      * @param $id
      * @return \Illuminate\Contracts\View\View
+     * @throws \Exception
      */
     public function getTask($id)
     {
@@ -38,6 +39,8 @@ class SupportTaskController extends Controller
     }
 
     /**
+     * @param Request $request
+     * @param SupportTask $task
      * @return \Illuminate\Contracts\View\View
      */
     public function postCreate(Request $request, SupportTask $task)
