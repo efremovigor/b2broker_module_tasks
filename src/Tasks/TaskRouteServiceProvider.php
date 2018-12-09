@@ -42,7 +42,6 @@ class TaskRouteServiceProvider extends \Illuminate\Foundation\Support\Providers\
      */
     protected function mapWebRoutes()
     {
-//        var_dump(base_path('vendor/b2broker_module_tasks/routes/web.php'));
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('vendor/b2broker_module_tasks/routes/web.php'));
@@ -57,7 +56,6 @@ class TaskRouteServiceProvider extends \Illuminate\Foundation\Support\Providers\
      */
     protected function mapApiRoutes()
     {
-//        var_dump(base_path('vendor/b2broker_module_tasks/routes/api.php'));
         Route::prefix('api')
             ->middleware('api')
             ->namespace($this->namespace)
