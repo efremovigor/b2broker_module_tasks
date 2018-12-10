@@ -12,7 +12,7 @@ class SupportTask extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['title', 'body'];
+    protected $fillable = [self::PROPERTY_TITLE, self::PROPERTY_BODY];
 
     public const NAME = 'support_task';
 
