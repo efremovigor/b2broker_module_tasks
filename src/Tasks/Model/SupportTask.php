@@ -83,9 +83,8 @@ class SupportTask extends Model
      */
     public function delete(array $attributes = [], array $options = []): bool
     {
-        $this->modified = date('Y-m-d H:i:s');
         $this->deleted = true;
-        return parent::update($attributes, $options);
+        return $this->update($attributes, $options);
     }
 
     /**
